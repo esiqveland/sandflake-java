@@ -20,7 +20,7 @@ This is java port of the Go library https://github.com/celrenheit/sandflake
 - 24bit: sequence number
 - 24bit: random number
 
-## Acknowlegements
+## Acknowledgements
 
 To be compatible with the base32 alphabet used in https://github.com/celrenheit/sandflake,
 I have copied the excellent base32 encoders from Google Guava project to be able to change the alphabet used and
