@@ -20,6 +20,20 @@ This is java port of the Go library https://github.com/celrenheit/sandflake
 - 24bit: sequence number
 - 24bit: random number
 
+## Usage
+
+For now refer to the [test](https://github.com/esiqveland/sandflake-java/blob/master/src/test/java/com/github/esiqveland/sandflake/TimeBasedGeneratorTest.java#L15):
+
+```java
+TimeBasedGenerator generator = new TimeBasedGenerator();
+SandflakeID id = generator.next();
+SandflakeID next = generator.next();
+
+assertThat(id).isNotEqualTo(next);
+assertThat(SandflakeID.encode(id)).isNotEqualTo(SandflakeID.encode(next));
+```
+
+
 ## Acknowledgements
 
 To be compatible with the base32 alphabet used in https://github.com/celrenheit/sandflake,
