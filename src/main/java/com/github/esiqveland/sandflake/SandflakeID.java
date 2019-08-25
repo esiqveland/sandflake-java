@@ -72,7 +72,7 @@ public class SandflakeID {
     }
 
     public int getSequenceID() {
-        ByteBuffer wrap = ByteBuffer.wrap(new byte[4]).put((byte) 0);
+        ByteBuffer wrap = ByteBuffer.allocate(4).put((byte) 0);
         for (int i = sequenceOffset; i < sequenceOffset + sequenceLength; i++) {
             wrap.put(raw[i]);
         }
@@ -81,7 +81,7 @@ public class SandflakeID {
     }
 
     public byte[] getWorkerID() {
-        ByteBuffer wrap = ByteBuffer.wrap(new byte[4]);
+        ByteBuffer wrap = ByteBuffer.allocate(4);
         for (int i = workerIDOffset; i < workerIDOffset + workerIDLength; i++) {
             wrap.put(raw[i]);
         }
