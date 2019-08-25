@@ -56,6 +56,9 @@ public class SandflakeIDTest {
 
         assertThat(sandflakeID.getBytes()).isEqualTo(magicBytes);
         assertThat(sandflakeID).isEqualTo(idKnown);
+        assertThat(sandflakeID.getSequenceID()).isEqualTo(seq);
+        assertThat(sandflakeID.getWorkerID()).isEqualTo(workerID);
+        assertThat(sandflakeID.getRandomBytes()).isEqualTo(rand);
         assertThat(SandflakeID.encode(sandflakeID)).isEqualTo("05E4ECYW2GZ66B8AFZZZZMKFPR");
     }
 
